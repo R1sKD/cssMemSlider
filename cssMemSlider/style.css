@@ -98,6 +98,8 @@ body {
 
 .mem__bottom-item {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .slider-controls {
@@ -145,6 +147,7 @@ body {
 #btn-4:checked~.mem__bottom .slider-controls label[for="btn-4"] span {
   background-color: #000;
 }
+
 #btn-5:checked~.mem__bottom .slider-controls label[for="btn-5"] span {
   background-color: #000;
 }
@@ -178,6 +181,7 @@ body {
   .mem__inner-slider {
     height: 75%;
   }
+
   .mem__bottom {
     height: 25%;
     flex-direction: column;
@@ -187,6 +191,10 @@ body {
   .mem__bottom-slider {
     order: 1;
     width: 100%;
+  }
+
+  .mem__bottom-item {
+    align-items: flex-start;
   }
 
   .slider-controls {
