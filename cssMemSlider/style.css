@@ -1,0 +1,164 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  color: #fff;
+}
+
+.container {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mem {
+  background-color: #000;
+  padding-top: 20px;
+}
+
+.mem__inner {
+  width: 100%;
+  height: 500px;
+}
+
+.mem__inner-input {
+  display: none;
+}
+
+.mem__inner-slider {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+.mem__inner-list {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  transition: transform 0.8s ease;
+}
+
+.mem__inner-item {
+  width: 100%;
+  height: 100%;
+}
+
+.mem__inner-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.mem__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20%;
+}
+
+.mem__bottom-slider {
+  width: 75%;
+  overflow: hidden;
+}
+
+.mem__bottom-list {
+  display: flex;
+  width: 400%;
+  transition: transform 0.8s ease;
+}
+
+.mem__bottom-item {
+  width: 100%;
+}
+
+.slider-controls {
+  display: flex;
+}
+
+.slider-controls label span{
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #3c92ea;
+  border: 2px solid #3c92ea;
+  border-radius: 50%;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.slider-controls label {
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.slider-controls label:first-child {
+  padding-left: 0;
+}
+
+.slider-controls label:last-child {
+  padding-right: 0;
+}
+
+.slider-controls label:hover span {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.slider-controls label:active span {
+  background-color: #3074bb;
+  border-color: #3074bb;
+}
+
+#btn-1:checked~.mem__bottom .slider-controls label[for="btn-1"] span,
+#btn-2:checked~.mem__bottom .slider-controls label[for="btn-2"] span,
+#btn-3:checked~.mem__bottom .slider-controls label[for="btn-3"] span,
+#btn-4:checked~.mem__bottom .slider-controls label[for="btn-4"] span {
+  background-color: #000;
+}
+
+#btn-1:checked~.mem__inner-slider .mem__inner-list,
+#btn-1:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
+  transform: translate(0);
+}
+
+#btn-2:checked~.mem__inner-slider .mem__inner-list,
+#btn-2:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
+  transform: translate(-25%);
+}
+
+#btn-3:checked~.mem__inner-slider .mem__inner-list,
+#btn-3:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
+  transform: translate(-50%);
+}
+
+#btn-4:checked~.mem__inner-slider .mem__inner-list,
+#btn-4:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
+  transform: translate(-75%);
+}
