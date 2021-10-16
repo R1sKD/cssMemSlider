@@ -25,10 +25,12 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  font: inherit;
 }
 
 body {
   color: #fff;
+  font-size: 16px;
 }
 
 .container {
@@ -38,14 +40,25 @@ body {
   padding: 0 20px;
 }
 
+.visuallyhidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
 .mem {
   background-color: #000;
-  padding-top: 20px;
 }
 
 .mem__inner {
   width: 100%;
-  height: 500px;
+  height: 100vh;
+  padding-top: 20px;
 }
 
 .mem__inner-input {
@@ -60,7 +73,7 @@ body {
 
 .mem__inner-list {
   display: flex;
-  width: 400%;
+  width: 500%;
   height: 100%;
   transition: transform 0.8s ease;
 }
@@ -92,12 +105,14 @@ body {
 
 .mem__bottom-list {
   display: flex;
-  width: 400%;
+  width: 500%;
   transition: transform 0.8s ease;
 }
 
 .mem__bottom-item {
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .slider-controls {
@@ -146,6 +161,10 @@ body {
   background-color: #000;
 }
 
+#btn-5:checked~.mem__bottom .slider-controls label[for="btn-5"] span {
+  background-color: #000;
+}
+
 #btn-1:checked~.mem__inner-slider .mem__inner-list,
 #btn-1:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
   transform: translate(0);
@@ -153,23 +172,29 @@ body {
 
 #btn-2:checked~.mem__inner-slider .mem__inner-list,
 #btn-2:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
-  transform: translate(-25%);
+  transform: translate(-20%);
 }
 
 #btn-3:checked~.mem__inner-slider .mem__inner-list,
 #btn-3:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
-  transform: translate(-50%);
+  transform: translate(-40%);
 }
 
 #btn-4:checked~.mem__inner-slider .mem__inner-list,
 #btn-4:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
-  transform: translate(-75%);
+  transform: translate(-60%);
+}
+
+#btn-5:checked~.mem__inner-slider .mem__inner-list,
+#btn-5:checked~.mem__bottom .mem__bottom-slider .mem__bottom-list {
+  transform: translate(-80%);
 }
 
 @media (max-width: 420px) {
   .mem__inner-slider {
     height: 75%;
   }
+
   .mem__bottom {
     height: 25%;
     flex-direction: column;
@@ -179,6 +204,10 @@ body {
   .mem__bottom-slider {
     order: 1;
     width: 100%;
+  }
+
+  .mem__bottom-item {
+    align-items: flex-start;
   }
 
   .slider-controls {
