@@ -40,12 +40,12 @@ body {
 
 .mem {
   background-color: #000;
-  padding-top: 20px;
 }
 
 .mem__inner {
   width: 100%;
-  height: 500px;
+  height: 100vh;
+  padding-top: 20px;
 }
 
 .mem__inner-input {
